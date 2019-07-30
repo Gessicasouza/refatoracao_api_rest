@@ -31,4 +31,9 @@ public class ProdutoService {
 	public Produto buscarProduto(Integer id ){
 		return produtoRepository.findById(id).get();
 	}
+	public void atualizarProduto(int id, Produto produto) {
+		produto.setId(id);
+		produtoRepository.save(produto);	
+		
+	}
 }

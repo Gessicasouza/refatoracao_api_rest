@@ -23,6 +23,9 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginserv;
+	
+	
+
 
 	@GetMapping("/login")
 	public ModelAndView exibirLoginForm() {
@@ -83,6 +86,15 @@ public class LoginController {
 	public ModelAndView sair(HttpSession session) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/login");
 		session.removeAttribute("usuario");
+		return modelAndView;
+	}
+//----------criados por Jefferson	
+	
+	@GetMapping("/")
+	public ModelAndView exibirTodosLogin() {
+		ModelAndView modelAndView = new ModelAndView("home.html");
+		modelAndView.addObject("logins", loginserv.exibirTodosLogin());
+		
 		return modelAndView;
 	}
 }

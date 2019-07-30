@@ -16,6 +16,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Produto implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,6 +39,7 @@ public class Produto implements Serializable {
 
 	@ManyToMany
 	@JoinColumn(name = "categoria_id")
+	@JsonIgnoreProperties("produtos")
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 	
 	@ManyToOne
