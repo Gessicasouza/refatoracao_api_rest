@@ -8,20 +8,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.br.spring.relacional.models.Categoria;
-import com.br.spring.relacional.models.Login;
 import com.br.spring.relacional.services.CategoriaService;
 
 @RestController
-@RequestMapping("/api/categotias")
-public class CategotiaApiRestController {
+@RequestMapping("/api/categorias")
+public class CategoriaApiRestController {
 	
 	@Autowired
 	private CategoriaService categoriaService;
 	
 	@GetMapping
-	public ResponseEntity<?> exibirCtegorias() {
+	public ResponseEntity<?> exibirCategorias() {
 
 		return ResponseEntity.ok(categoriaService.buscarTodasCategorias());
 

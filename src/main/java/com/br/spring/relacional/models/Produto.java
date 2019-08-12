@@ -26,14 +26,14 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotBlank(message = "Nome é obrigatório")
+	@NotBlank(message = "Nome invalido")
 	@NotNull
 	private String nome;
 
-	@DecimalMin(value = "0.5", message = "Valor muito baixo")
+	@DecimalMin(value = "0.5", message = "Valor minimo de 0.5 centavos")
 	private double valor;
 
-	@NotBlank(message = "Validade obrigatório")
+	@NotBlank(message = "Validade invalida")
 	@NotNull
 	private String validade;
 

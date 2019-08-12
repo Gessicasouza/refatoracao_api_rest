@@ -15,13 +15,13 @@ import com.br.spring.relacional.services.LoginService;
 
 @RestController
 @RequestMapping("/api/login")
-public class LoginApiRastController {
+public class LoginApiRestController {
 
 	@Autowired
 	private LoginService loginService;
 
 	@GetMapping
-	public ResponseEntity<?> exibirLogins() {
+	public ResponseEntity<?> exibirLogin() {
 
 		return ResponseEntity.ok(loginService.exibirTodosLogin());
 

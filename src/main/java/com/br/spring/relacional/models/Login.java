@@ -20,11 +20,11 @@ public class Login implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotBlank(message = "Apelido não pode ficar em branco")
-	@Size(min = 4, message = "Apelido tem que ter 4 caracters")
+	@NotBlank(message = "Apelido inválido")
+	@Size(min = 4, message = "Minimo 4  caracteres para apelido")
 	private String apelido;
-	@NotBlank(message = "Senha não pode ficar em branco")
-	@Size(min = 8, message = "Senha tem que ter 8 caracteres")
+	@NotBlank(message = "Senha inválido")
+	@Size(min = 8, message = "Minimo 8 caracteres para Senha")
 	private String senha;
 	
 	@OneToOne(cascade = {CascadeType.ALL})

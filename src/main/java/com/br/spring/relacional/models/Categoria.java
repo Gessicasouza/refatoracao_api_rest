@@ -19,7 +19,7 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotBlank(message = "Nome da categoria obrigatório")
+	@NotBlank(message = "Nome invalido")
 	private String nome;
 	
 	@ManyToMany(mappedBy = "categorias")
